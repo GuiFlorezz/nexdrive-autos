@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexDrive Autos | Encontre seu próximo carro</title>
+    <meta name="description" content="Encontre veículos, compare opções e descubra seu próximo carro na NexDrive Autos.">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" aria-label="NexDrive Autos - Página inicial">
+            NexDrive Autos
+        </a>
+
+        <nav aria-label="Navegação principal">
+            <a href="#inicio">Início</a>
+            <a href="#veiculos">Veículos</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <p>Seu próximo carro começa aqui</p>
+            <h1>Encontre o carro ideal para você</h1>
+            <p>Pesquise, compare e descubra veículos para o seu próximo caminho.</p>
+
+            <form id="form-busca">
+                <label for="busca">Qual carro você procura?</label>
+                <input
+                    type="search"
+                    id="busca"
+                    name="busca"
+                    placeholder="Ex.: Honda Civic"
+                >
+                <button type="submit">Buscar veículos</button>
+            </form>
+        </section>
+
+        <section id="veiculos">
+            <h2>Veículos em destaque</h2>
+            <div id="resultados-busca" aria-live="polite">
+                <p>Pesquise por uma marca ou modelo para encontrar veículos</p>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre a NexDrive</h2>
+            <p>Uma nova forma de encontrar seu próximo veículo.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NexDrive Autos. Projeto em desenvolvimento.</p>
+    </footer>
+</body>
+</html>
