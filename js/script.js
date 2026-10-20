@@ -2,12 +2,48 @@ const formulario = document.querySelector("#form-busca");
 const campoBusca = document.querySelector("#busca");
 const areaResultados = document.querySelector("#resultados-busca");
 
+
 const veiculos = [
-    { marca: "Honda", modelo: "Civic" },
-    { marca: "Toyota", modelo: "Corolla" },
-    { marca: "Volkswagen", modelo: "Golf" },
-    { marca: "Chevrolet", modelo: "Onix" },
-    { marca: "Fiat", modelo: "Argo" }
+    {
+        marca: "Honda",
+        modelo: "Civic",
+        ano: 2022,
+        preco: 115900,
+        quilometragem: 32000,
+        combustivel: "Flex"
+    },
+    {
+        marca: "Toyota",
+        modelo: "Corolla",
+        ano: 2023,
+        preco: 139900,
+        quilometragem: 25000,
+        combustivel: "Flex"
+    },
+    {
+        marca: "Volkswagen",
+        modelo: "Golf",
+        ano: 2020,
+        preco: 109900,
+        quilometragem: 48000,
+        combustivel: "Gasolina"
+    },
+    {
+        marca: "Chevrolet",
+        modelo: "Onix",
+        ano: 2024,
+        preco: 82900,
+        quilometragem: 12000,
+        combustivel: "Flex"
+    },
+    {
+        marca: "Fiat",
+        modelo: "Argo",
+        ano: 2023,
+        preco: 74900,
+        quilometragem: 18000,
+        combustivel: "Flex"
+    }
 ];
 
 
@@ -33,9 +69,25 @@ formulario.addEventListener("submit", function(evento) {
         return;
     }
 
-    areaResultados.innerHTML = encontrados.map(function(veiculo) {
-        return `<article class="veiculo">
-            <h3>${veiculo.marca} ${veiculo.modelo}</h3>
-        </article>`;
-    }).join("");
+    exibirVeiculos(encontrados);
 });
+
+
+function criarCard(veiculo){
+    return `
+        <article class="veiculo">
+            <h3>${veiculo.marca} ${veiculo.modelo}</h3>
+            <p><strong>Ano:</strong> ${veiculo.ano}</p>
+            <p><strong>Preço:</strong> ${veiculo.preco.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+            })}</p>
+            <p><strong>Quilometragem:</strong> ${veiculo.quilometragem.toLocaleString("pt-BR")} km</p>
+            <p><strong>Combustível:</strong> ${veiculo.combustivel}</p>
+        </article>
+    `;
+}
+
+function exibirVeiculos(lista){
+    areaResultados.innerHTML = lista.map(criarCard).join("");
+}

@@ -196,3 +196,70 @@ footer {
         min-width: 0;
     }
 }
+
+/* Catálogo de veículos */
+#resultados-busca {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+/* Card individual */
+.veiculo {
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.veiculo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.veiculo h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #172554;
+    font-size: 1.25rem;
+}
+
+.veiculo p {
+    margin: 10px 0;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.veiculo p strong {
+    color: #1e293b;
+}
+
+/* Preço em destaque */
+.veiculo p:nth-of-type(2) {
+    color: #15803d;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    #resultados-busca {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    #resultados-busca {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .veiculo {
+        padding: 20px;
+    }
+}
+
