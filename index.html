@@ -43,6 +43,66 @@
         <section id="veiculos">
             <h2>Veículos em destaque</h2>
             
+            
+        <div id="filtros-veiculos">
+            <h3>Filtrar veículos</h3>
+
+            <div class="grupo-filtro">
+                <label for="preco-min">Preço mínimo (R$)</label>
+                <input
+                    type="number"
+                    id="preco-min"
+                    min="0"
+                    placeholder="Ex.: 50000"
+                >
+            </div>
+
+            <div class="grupo-filtro">
+                <label for="preco-max">Preço máximo (R$)</label>
+                <input
+                    type="number"
+                    id="preco-max"
+                    min="0"
+                    placeholder="Ex.: 120000"
+                >
+            </div>
+
+            <div class="grupo-filtro">
+                <label for="ano-min">Ano mínimo</label>
+                <input
+                    type="number"
+                    id="ano-min"
+                    min="1900"
+                    max="2100"
+                    placeholder="Ex.: 2020"
+                >
+            </div>
+
+            <div class="grupo-filtro">
+                <label for="ano-max">Ano máximo</label>
+                <input
+                    type="number"
+                    id="ano-max"
+                    min="1900"
+                    max="2100"
+                    placeholder="Ex.: 2024"
+                >
+            </div>
+
+            <div class="grupo-filtro">
+                <label for="combustivel">Combustível</label>
+                <select id="combustivel">
+                    <option value="">Todos</option>
+                    <option value="Flex">Flex</option>
+                    <option value="Gasolina">Gasolina</option>
+                </select>
+            </div>
+
+            <button type="button" id="limpar-filtros">
+                Limpar filtros
+            </button>
+        </div>
+
             <div id="resultados-busca" aria-live="polite">
                 <p>Pesquise por uma marca ou modelo para encontrar veículos</p>
             </div>
